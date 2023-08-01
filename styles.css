@@ -1,0 +1,22 @@
+body {
+    background-color: #6F61C0;
+}
+
+#container {
+    display: inline-block;
+    width : 25%;
+    height: 80vh;
+    margin-top: 5vh;
+    margin-left: 37.5%;
+    margin-right: 37.5%;
+    border-radius: 10px 10px 50px 10px;
+    background-color:#d6d7db;
+    border: solid black 3px;
+}
+
+/* #clockBody {
+   background-color:  #d6d7db;
+   border-radius: 10px 10px 50px 10px;
+   height: 100%;
+   box-shadow: 5px 10px #C5C0BD;
+} */
