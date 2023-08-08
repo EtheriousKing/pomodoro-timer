@@ -45,13 +45,8 @@ body {
 
 #progress {
     fill: none;
-    stroke: black;
-    stroke-linecap: square;
     stroke-width: 50;
-    stroke-dasharray: 400%;
-    stroke-dashoffset: 0%;
-    stroke-linejoin: square;
-	animation: spin 10s 1 linear ;
+    transition: 0.5s;
 }
 
 #screen {
@@ -131,12 +126,6 @@ body {
 #controlButton button {
     flex: 1;
 }
-
-@keyframes spin {
-    100% {
-          stroke-dashoffset: -400%;
-      }
-  }
 
 @media (max-width:995px) {
     #container {
