@@ -155,6 +155,7 @@ function resetTimer() {
     breakDuration.innerHTML = breakTime;
     timer.innerText = "00:00";
     sessionActive = false;
+    clearInterval(interval);
     sessionIncrease.disabled = false;
     sessionDecrease.disabled = false;
     breakIncrease.disabled = false;
