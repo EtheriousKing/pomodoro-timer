@@ -11,6 +11,9 @@ const startButton = document.getElementById("start");
 const pauseButton = document.getElementById("pause");
 const resetButton = document.getElementById("reset");
 const resumeButton = document.getElementById("resume");
+const progress = document.getElementById("progress");
+
+
 
 // Declaring Variable;
 var sessionCount = 1;
@@ -19,8 +22,14 @@ var breakTime = 5;
 var sessionActive = false;
 var interval;
 var currentSessionTime;
+var totalTime = sessionTime;
+var totalBreak = breakTime;
+var width = progress.width.animVal.value;
+var height = progress.height.animVal.value;
+var perimeter = 2 * (width + height);
 resumeButton.disabled = true;
 pauseButton.disabled = true;
+progress.style.strokeDasharray = perimeter;
 
 // Adding Event Listeners to Buttons
 sessionIncrease.addEventListener("click",increaseSessionTime);
@@ -81,7 +90,7 @@ function startTimer() {
     breakDecrease.disabled = true;
     startButton.disabled = true;
     pauseButton.disabled = false;
-    var totalTime = sessionTime * 60;
+    totalTime = sessionTime * 60;
     timerRun (totalTime);
 }
 
@@ -89,7 +98,7 @@ function startTimer() {
 function breakTimer () {
     clearInterval(interval);
     sessionActive = false;
-    var totalBreak = breakTime * 60;
+    totalBreak = breakTime * 60;
     timerRun (totalBreak);
 }
 
@@ -118,6 +127,15 @@ function timerRun (currentValue) {
         minutes = minutes < 10 ? "0" + minutes : minutes;
         var seconds = Math.floor(currentValue % 60);
         seconds = seconds < 10 ? "0" + seconds : seconds;
+        if (sessionActive === false) {
+            progress.style.stroke = "red";
+            var breakPerc = Math.ceil(((totalBreak - currentValue) / totalBreak) * 100);
+            setProgress(breakPerc);
+        } else {
+            progress.style.stroke = "blue"
+            var perc = Math.ceil(((totalTime - currentValue) / totalTime) * 100);
+            setProgress(perc);
+        }
         currentValue --;
         currentSessionTime = currentValue;
         timer.innerText= minutes + ":" + seconds;
@@ -144,8 +162,14 @@ function sessionCounter() {
 
 }
 
+function setProgress(percent) {
+    var offset = perimeter - (percent / 100) * perimeter;
+    progress.style.strokeDashoffset = offset;
+  }
+
 //Reset Timer
 function resetTimer() {
+    setProgress(0);
     sessionCount = 0;
     sessionActive = true;
     sessionCounter();
