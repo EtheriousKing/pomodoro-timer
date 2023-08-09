@@ -1,2 +1,4 @@
 # pomodoro-timer
-Will be upgraded in the future
+To view a demo of this page click on the following link **[Pomodoro-Timer](https://etheriousking.github.io/pomodoro-timer/)**
+This project was created using only vanilla HTML, CSS, and JavaScript. It is a simple pomodoro timer with a bordered progress bar that indicates the session's progress. The timer features start, stop, resume, and reset functionalities, along with a session counter. The maximum session time that can be set is 60 minutes, and the maximum break time that can be set is 15 minutes. These limits are intended to enhance productivity.
+It will be upgraded in the future to include an alarm and to work seamlessly on other devices.
