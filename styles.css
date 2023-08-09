@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=REM&display=swap');
+
 * {
     margin: 0px;
     padding: 0px;
@@ -60,6 +63,10 @@ body {
 }
 
 #timer {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: 2px;
 }
 
 #sessionTimer {
@@ -71,6 +78,9 @@ body {
 
 #sessionText {
     color: #3d418e;
+    padding: 5px 0px 5px 0px;
+    font-size: 2rem;
+    font-weight: bolder;
 }
 
 #settingButton {
@@ -87,6 +97,8 @@ body {
 
 #settingTitle p{
     flex: 1;
+    font-family: 'REM', sans-serif;
+    font-weight: bold;
 }
 
 #interval {
@@ -97,6 +109,9 @@ body {
 
 #interval p {
     flex: 1;
+    font-family: 'REM', sans-serif;
+    font-weight: bold;
+    padding: 0px 0px 5px 0px;
 }
 
 #sessionButton {
@@ -107,6 +122,10 @@ body {
     width: 49%;
 }
 
+#sessionButton button {
+    padding: 5px 0px 5px 0px;
+}
+
 #breakButton {
     display: inline-flex;
     flex-wrap: nowrap;
@@ -115,16 +134,26 @@ body {
     width: 49%;
 }
 
+#breakButton button {
+    padding: 5px 0px 5px 0px;
+}
+
 #controlButton {
     flex : 0.1;
     display: flex;
     flex-wrap: nowrap;
     width: 80%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    gap: 3px;
 }
 
 #controlButton button {
     flex: 1;
+}
+
+.buttons {
+    border-radius: 5px;
+    font-family: 'REM', sans-serif;
 }
 
 @media (max-width:995px) {
